@@ -1533,6 +1533,7 @@ class Feature(models.Model):
     USE_SPHINX_BUILDERS = 'use_sphinx_builders'
     DEDUPLICATE_BUILDS = 'deduplicate_builds'
     DEFAULT_TO_FUZZY_SEARCH = 'default_to_fuzzy_search'
+    INDEX_FROM_HTML_FILES = 'index_from_html_files'
 
     FEATURES = (
         (USE_SPHINX_LATEST, _('Use latest version of Sphinx')),
@@ -1649,7 +1650,11 @@ class Feature(models.Model):
         (
             DEFAULT_TO_FUZZY_SEARCH,
             _('Default to fuzzy search for simple search queries'),
-        )
+        ),
+        (
+            INDEX_FROM_HTML_FILES,
+            _('Index content directly from html files instead or relying in other sources'),
+        ),
     )
 
     projects = models.ManyToManyField(
